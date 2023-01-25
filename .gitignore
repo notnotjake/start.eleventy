@@ -1,6 +1,4 @@
 node_modules
-.nova
 .DS_Store
 
-static
 public
