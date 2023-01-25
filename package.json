@@ -1,0 +1,27 @@
+{
+	"name": "eleventy",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+	   "watch:eleventy": "npx @11ty/eleventy --serve",
+       "watch:sass": "npx sass --watch source/_assets/scss:public/css",
+       
+       "build:eleventy": "npx @11ty/eleventy",
+       "build:sass": "npx sass --no-source-map source/_assets/scss:public/css",
+       
+       "start": "npm-run-all build:sass --parallel watch:*",
+       "build": "MY_ENVIRONMENT=prod npm-run-all build:*"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+    "dependencies": {
+        "@11ty/eleventy": "^2.0.0-beta.1"
+    },
+	"devDependencies": {
+	    "@11ty/eleventy": "^2.0.0-beta.1",
+        "npm-run-all": "^4.1.5",
+        "sass": "^1.56.1"
+	}
+}
