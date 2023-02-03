@@ -3,5 +3,6 @@
 	"description": "foo",
 	"baseURL": "foo",
 	"image": "",
-	"favicon": ""
+	"favicon": "",
+	"twitter": ""
 }
