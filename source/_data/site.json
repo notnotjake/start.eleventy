@@ -1,5 +1,7 @@
 {
 	"name": "sitename",
 	"description": "foo",
-	"baseURL": "foo"
+	"baseURL": "foo",
+	"image": "",
+	"favicon": ""
 }

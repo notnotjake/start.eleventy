@@ -1,49 +1,42 @@
 <head>
 	<!-- Site Info -->
 	<meta charset="utf-8">
-	<title>New Site</title>
-	<meta name="author" content="Jake Gooch">
-	<meta name="description" content="foo">
-	<link rel="canonical" href="foo">
+	<title>{{ site.name}}{% if title %} - {{ title }}{% endif %}</title>
+	<meta name="author" content="LightDance Design">
+	<meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+	{% if cannonical %}<link rel="canonical" href="{{ cannonical }}">{% endif %}
 	<!-- Site Info [End] -->
 	
 	
 	<!-- OpenGraph -->
-	<meta property="og:title" content="foo">
-	<meta property="og:site_name" content="foo">
-	<meta property="og:url" content="foo">
+	<meta property="og:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
+	<meta property="og:site_name" content="{{ site.name}}">
+	<meta property="og:url" content="{{ site.baseURL}}">
 	<meta property="og:type" content="website">
-	<meta property="og:description" content="foo">
-	<meta property="og:image" content="foo">
+	<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+	<meta property="og:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
 	<!-- OpenGraph [End] -->
 	
 	
 	<!-- Twitter Cards -->
 	<meta property="twitter:card" content="summary">
 	<meta property="twitter:site" content="@foo">
-	<meta property="twitter:creator" content="@foo">
-	<meta property="twitter:title" content="foo">
-	<meta property="twitter:description" content="foo">
-	<meta property="twitter:image" content="foo">
+	<meta property="twitter:creator" content="">
+	<meta property="twitter:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
+	<meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+	<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
 	<!-- Twitter Cards [End] -->
 	
 	
 	<!-- Fonts -->
 	<style>
-		/* GT MARU - VARIABLE */
-		@font-face {
-			font-family: 'Maru Var';
-			src: url('https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2') format('woff2-variations');
+		/* NAME - WEIGHT */
+		/* @font-face {
+			font-family: 'NAME';
+			src: url('source') format('woff2-variations');
 			font-style: normal;
-		}
-		/* GT PRESSURA - VARIABLE */
-		@font-face {
-			font-family: 'Pressura Var';
-			src: url('https://assets.notnotjake.com/fonts/pressura/GT-Pressura-Trial-VF.woff2') format('woff2-variations');
-			font-style: normal;
-		}
+		} */
 	</style>
-	<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2" type="font/woff2" crossorigin>
 	
 	<link rel="preconnect" href="https://rsms.me/">
 	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -54,10 +47,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
 	
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
-		<!-- <link rel="stylesheet" type="text/css" href="foo"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="source"> -->
 		
-	<link rel="apple-touch-icon" href="https://www.notnotjake.com/images/favicon.png">
-	<link rel="icon" type="image/png" sizes="271x271" href="https://www.notnotjake.com/images/favicon.png">
+	<link rel="apple-touch-icon" href="{{ site.favicon }}">
+	<link rel="icon" type="image/png" sizes="271x271" href="{{ site.favicon }}">
 	<!-- Appearance [End] -->
 	
 	
