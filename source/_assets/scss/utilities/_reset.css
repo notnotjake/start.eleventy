@@ -1,0 +1,14 @@
+* {margin: 0;line-height: calc(1em + 0.5rem);}
+*, *::before, *::after {box-sizing: border-box;}
+html, body {height: 100%;}
+/* html:focus-within {scroll-behavior: smooth;} */
+body {-webkit-font-smoothing: antialiased;min-height: 100vh;text-rendering: optimizeSpeed;}
+p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
+input, button, textarea, select {font: inherit;}
+ul[role='list'], ol[role='list'] {list-style: none;padding:0;}
+a:not([class]) {text-decoration-skip-ink: auto;}
+img, picture, figure, video, canvas, svg {display: block;max-width: 100%;}
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {animation-duration: 0.01ms !important;animation-iteration-count: 1 !important;transition-duration: 0.01ms !important;scroll-behavior: auto !important;	
+	}
+}

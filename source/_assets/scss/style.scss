@@ -1,0 +1,10 @@
+@use './abstracts' as a;
+@use './utilities';
+// @use './components';
+
+@import url('https://rsms.me/inter/inter.css');
+
+html, body {
+	font-family: 'Inter', sans-serif;
+	background-color: rgb(234, 239, 240);
+}
