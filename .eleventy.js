@@ -2,7 +2,8 @@ module.exports = function(eleventyConfig) {
 	/* Watch css files for changes
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	eleventyConfig.setServerOptions({
-		watch: ['./public/css/**/*.css']
+		watch: ['./public/css/**/*.css'],
+		showAllHosts: true
 	})
 	
 	/* Set input/output
