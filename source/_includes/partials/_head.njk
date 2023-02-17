@@ -1,63 +1,60 @@
-<head>
-	<!-- Site Info -->
-	<meta charset="utf-8">
-	<title>{{ site.name}}{% if title %} - {{ title }}{% endif %}</title>
-	<meta name="author" content="LightDance Design">
-	<meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-	{% if cannonical %}<link rel="canonical" href="{{ cannonical }}">{% endif %}
-	<!-- Site Info [End] -->
+<!-- Site Info -->
+<meta charset="utf-8">
+<title>{{ site.name}}{% if title %} - {{ title }}{% endif %}</title>
+{% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
+<meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+{% if cannonical %}<link rel="canonical" href="{{ cannonical }}">{% endif %}
+<!-- Site Info [End] -->
+
+
+<!-- OpenGraph -->
+<meta property="og:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
+<meta property="og:site_name" content="{{ site.name}}">
+<meta property="og:url" content="{{ site.baseURL}}">
+<meta property="og:type" content="website">
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
+<!-- OpenGraph [End] -->
+
+
+<!-- Twitter Cards -->
+<meta property="twitter:card" content="summary">
+<meta property="twitter:site" content="{{ site.twitter }}">
+<meta property="twitter:creator" content="">
+<meta property="twitter:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
+<meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
+<!-- Twitter Cards [End] -->
+
+
+<!-- Fonts -->
+{% include "partials/_fonts.njk" %}
+
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<!-- Fonts [End] -->
+
+
+<!-- Appearance -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+{% if style %}<link rel="stylesheet" type="text/css" href="{{style}}">{% endif %}
 	
-	
-	<!-- OpenGraph -->
-	<meta property="og:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
-	<meta property="og:site_name" content="{{ site.name}}">
-	<meta property="og:url" content="{{ site.baseURL}}">
-	<meta property="og:type" content="website">
-	<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-	<meta property="og:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
-	<!-- OpenGraph [End] -->
-	
-	
-	<!-- Twitter Cards -->
-	<meta property="twitter:card" content="summary">
-	<meta property="twitter:site" content="{{ site.twitter }}">
-	<meta property="twitter:creator" content="">
-	<meta property="twitter:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
-	<meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-	<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
-	<!-- Twitter Cards [End] -->
-	
-	
-	<!-- Fonts -->
-	<style>
-		/* NAME - WEIGHT */
-		/* @font-face {
-			font-family: 'NAME';
-			src: url('source') format('woff2-variations');
-			font-style: normal;
-		} */
-	</style>
-	
-	<link rel="preconnect" href="https://rsms.me/">
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-	<!-- Fonts [End] -->
-	
-	
-	<!-- Appearance -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
-	
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	{% if style %}<link rel="stylesheet" type="text/css" href="{{style}}">{% endif %}
-		
-	<link rel="apple-touch-icon" href="{{ site.favicon }}">
-	<link rel="icon" type="image/png" sizes="271x271" href="{{ site.favicon }}">
-	<!-- Appearance [End] -->
-	
-	
-	<!-- Feeds -->
-	<!-- Feeds [End] -->
-	
-	
-	<!-- Fathom Analytics -->
-	<!-- Fathom Analytics [End] -->
-</head>
+<link rel="apple-touch-icon" href="{{ site.favicon }}">
+<link rel="icon" type="image/png" sizes="271x271" href="{{ site.favicon }}">
+<!-- Appearance [End] -->
+
+
+<!-- Feeds -->
+{% if feed %}
+{{feed}}
+{% endif %}
+<!-- Feeds [End] -->
+
+
+<!-- Fathom Analytics -->
+{% if site.fathom.use %}
+<script src="{{site.fathom.url}}" data-site="{{site.fathom.id}}" defer></script>
+{% endif %}
+<!-- Fathom Analytics [End] -->

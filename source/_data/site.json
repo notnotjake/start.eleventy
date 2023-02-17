@@ -1,8 +1,15 @@
 {
+	"baseURL": "foo",
 	"name": "sitename",
 	"description": "foo",
-	"baseURL": "foo",
-	"image": "",
+	"author": false,
+	"twitter": "",
 	"favicon": "",
-	"twitter": ""
+	"image": "",
+	"fathom": {
+		"use": false,
+		"url": "",
+		"id": ""
+	},
+	"feed": false
 }
