@@ -1,5 +1,18 @@
-# New 11ty Project Skeleton
+# 11ty Project Skeleton
 
-**Get Started:**
-- Project search "foo" and replace with project name, description, etc.
-- Startup dev with npm run start
+Quick and easy starting point for buiulding sites with 11ty
+
+**Start:**
+```
+degit notnotjake/start.eleventy
+```
+
+**Getting Going:**
+- Open `source/data/site.json` and edit appropriate values
+- Startup dev with `npm run dev` or use Nova's run toolbar item
+
+**Decisions:**
+- Uses SCSS
+- Separates static assets to be hosted on Object Storage + CDN
+
+[11ty Documentation](https://www.11ty.dev/docs/)
