@@ -1,11 +1,18 @@
 <!-- Site Info -->
 <meta charset="utf-8">
-<title>{{ site.name}}{% if title %} - {{ title }}{% endif %}</title>
+<title>{{ site.name }}{% if title %} - {{ title }}{% endif %}</title>
 {% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
 <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
 {% if cannonical %}<link rel="canonical" href="{{ cannonical }}">{% endif %}
 <!-- Site Info [End] -->
 
+<!-- Fathom Analytics -->
+{% if site.fathom.use %}<script src="https://cdn.usefathom.com/script.js" data-site="{{site.fathom.id}}" defer></script>{% endif %}
+<!-- Fathom Analytics [End] -->
+
+<!-- Feeds -->
+{% if site.feed %}{{ site.feed }}{% endif %}
+<!-- Feeds [End] -->
 
 <!-- OpenGraph -->
 <meta property="og:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
@@ -16,7 +23,6 @@
 <meta property="og:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
 <!-- OpenGraph [End] -->
 
-
 <!-- Twitter Cards -->
 <meta property="twitter:card" content="summary">
 <meta property="twitter:site" content="{{ site.twitter }}">
@@ -26,17 +32,10 @@
 <meta property="twitter:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
 <!-- Twitter Cards [End] -->
 
-
-<!-- Fonts -->
-{% include "partials/_fonts.njk" %}
-
-<link rel="preconnect" href="https://rsms.me/">
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<!-- Fonts [End] -->
-
-
 <!-- Appearance -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+
+{% include "partials/_fonts.njk" %}
 
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 {% if style %}<link rel="stylesheet" type="text/css" href="{{style}}">{% endif %}
@@ -44,17 +43,3 @@
 <link rel="apple-touch-icon" href="{{ site.favicon }}">
 <link rel="icon" type="image/png" sizes="271x271" href="{{ site.favicon }}">
 <!-- Appearance [End] -->
-
-
-<!-- Feeds -->
-{% if feed %}
-{{feed}}
-{% endif %}
-<!-- Feeds [End] -->
-
-
-<!-- Fathom Analytics -->
-{% if site.fathom.use %}
-<script src="{{site.fathom.url}}" data-site="{{site.fathom.id}}" defer></script>
-{% endif %}
-<!-- Fathom Analytics [End] -->

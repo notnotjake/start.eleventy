@@ -1,14 +1,14 @@
 {
 	"baseURL": "foo",
-	"name": "sitename",
+	"assetsURL": "foo"
+	"name": "foo",
 	"description": "foo",
 	"author": false,
 	"twitter": "",
 	"favicon": "",
 	"image": "",
 	"fathom": {
-		"use": false,
-		"url": "",
+		"use": false
 		"id": ""
 	},
 	"feed": false
